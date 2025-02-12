@@ -33,7 +33,7 @@ def parse_args():
 
     # Options to configure phishing server IP
     parser.add_argument("-i", "--phishing-ip", type=str, required=True,
-                        help="IP address of the phishing server to redirects each DNS query.")
+                        help="IP address of the phishing server to redirects every DNS query.")
 
     return parser.parse_args()
 
