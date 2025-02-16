@@ -50,7 +50,7 @@ The aim is to get between the victim and the router, in what is known as a **Man
 
 ### Prerequisites
 
-This code uses **scapy** to forge packets and send them to our victims.
+This code uses **scapy** to forge packets and send them to our victims. We also use **argparse** to add arguments to our program.
 
 ### Implementation
 
