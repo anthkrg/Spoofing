@@ -2,15 +2,15 @@
 
 **Author : Anthony KOUROGHLI (anthkrg)**
 
-## Frenc Part
+## French Part
 
-#### Contexte
+### Contexte
 
 Ce dossier contient mon code pour faire de l'ARP spoofing.
 
 L'ARP spoofing est une technique utilisé pour altérer la table ARP (correspondance MAC <--> IP) d'une machine cible
 
-**IMPORTANT !!!**
+### **IMPORTANT !!!**
 
 Ce code permet de faire de l'ARP spoofing **si et seulement si** l'attaquant se trouve sur le même réseau que la victime
 
@@ -34,13 +34,13 @@ Pour finir nous appelerons une fonction pour rétablir les tables ARP de chaque 
 
 ## English Part
 
-#### Background
+### Background
 
 This folder contains my ARP spoofing code.
 
 ARP spoofing is a technique used to alter the ARP table (MAC <--> IP correspondence) of a target machine.
 
-**IMPORTANT**
+### **IMPORTANT**
 
 This code enables ARP spoofing **if and only if** the attacker is on the same network as the victim.
 
