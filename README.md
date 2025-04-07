@@ -1,4 +1,4 @@
-# **ARP Spoofing, DNS Spoofing, and DHCP Spoofing**
+# **ARP Spoofing, DNS Spoofing**
 
 **Author : Anthony KOUROGHLI (anthkrg)**
 
